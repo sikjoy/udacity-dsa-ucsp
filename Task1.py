@@ -20,12 +20,9 @@ Print a message:
 """
 nums = set()
 
-for text in texts:
-    nums.add(text[0])
-    nums.add(text[1])
+for rec in texts + calls:
+    nums.add(rec[0])
+    nums.add(rec[1])
 
-for call in calls:
-    nums.add(call[0])
-    nums.add(call[1])
-
-print(len(nums))
+#print(len(nums))
+print(f"There are {len(nums)} different telephone numbers in the records.")

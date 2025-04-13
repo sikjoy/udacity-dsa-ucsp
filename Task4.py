@@ -45,6 +45,7 @@ for call in calls:
         # if caller is not disqualified add to set
         ptms.add(call[0])
 
+ptms = sorted(ptms) # worst case: O(nlog(n))
 print("These numbers could be telemarketers: ")
 for ptm in ptms:
     print(ptm)

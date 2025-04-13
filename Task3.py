@@ -54,19 +54,19 @@ for call in calls:
             # fixed line
             parts = call[1].split(')')
             res = parts[0] + ')'
-        elif call[1][:3] == '140':
+        if call[1][:3] == '140':
             # telemarketer
             res = '140'
-        else:
+        if call[1][0] in ('7', '8', '9'):
             # mobile
-            parts = call[1].split()
-            res = parts[0]
+            res = call[1][:4]
         codes.add(res)
 
 codes = sorted(codes) # sort the results
 # if we assume worst case (every call originated in (080) and connected w/ a
 # unique prefix): O(nlog(n))
 
+#print(len(codes))
 print('The numbers called by people in Bangalore have codes:')
 for code in codes:
     # O(n)
